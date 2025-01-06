@@ -9,9 +9,8 @@ export default function NavbarMenu() {
     <Container>
       <Navbar.Brand href="#home">Navbar</Navbar.Brand>
       <Nav className="me-auto">
-        <Nav.Link href="#home">Home</Nav.Link>
-        <Nav.Link href="#features">Contact Us</Nav.Link>
-        <Nav.Link href="#pricing">To Do List</Nav.Link>
+        <Nav.Link href="/home">Home</Nav.Link>
+        <Nav.Link href="/contactus">Contact Us</Nav.Link>
       </Nav>
     </Container>
   </Navbar>
