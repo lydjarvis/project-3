@@ -1,7 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Table from 'react-bootstrap/Table';
 
 export default function HomePage() {
+  const [todo, setTodos] = useState ([
+    {todo_date:"2024/12/12", todo_text:"Study React", isCompleted: false},
+    {todo_date:"2024/10/12", todo_text:"Study HTML", isCompleted: true}, 
+    {todo_date:"2024/01/01", todo_text:"Data Structure", isCompleted: true}, 
+
+  ])
+
   return (
     <>
         <h1>Home Page</h1>
@@ -9,29 +16,24 @@ export default function HomePage() {
       <thead>
         <tr>
           <th>#</th>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Username</th>
+          <th>Todo Text</th>
+          <th>Todo Date</th>
+          <th>IsCompleted</th>
+          <th>Actions</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>1</td>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
+        {
+        todo.map ((todo, index)=>(
+          <tr>
+          <td>{index+1}</td>
+          <td>{todo.todo_text}</td>
+          <td>{todo.todo_date}</td>
+          <td>{todo.isCompleted ? "YES" : "NO" }</td>
+
         </tr>
-        <tr>
-          <td>2</td>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td colSpan={2}>Larry the Bird</td>
-          <td>@twitter</td>
-        </tr>
+        ))
+      }
       </tbody>
     </Table>
     </>
