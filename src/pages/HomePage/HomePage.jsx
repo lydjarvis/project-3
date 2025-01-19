@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Table from 'react-bootstrap/Table';
+import Button from 'react-bootstrap/Button';
 
 export default function HomePage() {
   const [todo, setTodos] = useState ([
@@ -19,7 +20,7 @@ export default function HomePage() {
           <th>Todo Text</th>
           <th>Todo Date</th>
           <th>IsCompleted</th>
-          <th>Actions</th>
+          <th>DELETE</th>
         </tr>
       </thead>
       <tbody>
@@ -30,6 +31,7 @@ export default function HomePage() {
           <td>{todo.todo_text}</td>
           <td>{todo.todo_date}</td>
           <td>{todo.isCompleted ? "YES" : "NO" }</td>
+          <td> <Button variant="danger">Delete</Button></td>
 
         </tr>
         ))
