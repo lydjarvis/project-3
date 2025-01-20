@@ -10,9 +10,21 @@ export default function HomePage() {
 
   ])
 
+
+let handleDelete = (event, rowindex) => {
+  console.log (event)
+  console.log (rowindex)
+  let newTodo = todo.filter ((todo, TodoIndex)=> {
+    if (rowindex!==TodoIndex) return todo 
+  })
+  setTodos (newTodo)
+}
   return (
     <>
         <h1>Home Page</h1>
+        <Button variant="dark">All Todos</Button>
+        <Button variant="dark">Completed</Button>
+        <Button variant="dark">Uncompleted</Button>
         <Table striped bordered hover>
       <thead>
         <tr>
@@ -31,7 +43,7 @@ export default function HomePage() {
           <td>{todo.todo_text}</td>
           <td>{todo.todo_date}</td>
           <td>{todo.isCompleted ? "YES" : "NO" }</td>
-          <td> <Button variant="danger">Delete</Button></td>
+          <td> <Button variant="danger" onClick={(event)=>handleDelete(event,index)}>Delete</Button></td>
 
         </tr>
         ))
