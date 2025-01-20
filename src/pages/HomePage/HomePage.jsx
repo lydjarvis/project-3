@@ -3,13 +3,19 @@ import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 
 export default function HomePage() {
-  const [todo, setTodos] = useState ([
+  let defaultTodos = 
+  [
     {todo_date:"2024/12/12", todo_text:"Study React", isCompleted: false},
     {todo_date:"2024/10/12", todo_text:"Study HTML", isCompleted: true}, 
     {todo_date:"2024/01/01", todo_text:"Data Structure", isCompleted: true}, 
 
-  ])
+  ]
+    const [todo, setTodos] = useState (defaultTodos)
+    const [initialTodos, setInitialTodos] = useState (defaultTodos)
 
+    let handleAllTodos = () => {
+      setTodos (initialTodos)
+    }
 
 let handleDelete = (event, rowindex) => {
   console.log (event)
@@ -22,7 +28,7 @@ let handleDelete = (event, rowindex) => {
   return (
     <>
         <h1>Home Page</h1>
-        <Button variant="dark">All Todos</Button>
+        <Button variant="dark" onClick={()=>handleAllTodos()}>All Todos</Button>
         <Button variant="dark">Completed</Button>
         <Button variant="dark">Uncompleted</Button>
         <Table striped bordered hover>
