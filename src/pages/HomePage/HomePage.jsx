@@ -17,6 +17,18 @@ export default function HomePage() {
       setTodos (initialTodos)
     }
 
+    let handleCompletedTodos = () => {
+      let completedTodos = todo.filter ((todo)=> todo.isCompleted===true)
+      setTodos (completedTodos)
+      let newTodo = todo.filter ((todo, TodoIndex)=> {
+      })
+    }
+
+    let handleUncompletedTodos = () => {
+      let uncompletedTodos = todo.filter ((todo)=> todo.isCompleted===false)
+      setTodos (uncompletedTodos)
+    }
+
 let handleDelete = (event, rowindex) => {
   console.log (event)
   console.log (rowindex)
@@ -29,8 +41,8 @@ let handleDelete = (event, rowindex) => {
     <>
         <h1>Home Page</h1>
         <Button variant="dark" onClick={()=>handleAllTodos()}>All Todos</Button>
-        <Button variant="dark">Completed</Button>
-        <Button variant="dark">Uncompleted</Button>
+        <Button variant="dark" onClick={()=>handleCompletedTodos()}>Completed</Button>
+        <Button variant="dark" onClick={()=>handleUncompletedTodos()}>Uncompleted</Button>
         <Table striped bordered hover>
       <thead>
         <tr>
