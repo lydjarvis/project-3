@@ -4,7 +4,6 @@ import HomePage from './pages/HomePage/HomePage';
 import ContactUs from './pages/ContactUs/ContactUs';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from './components/Navbar/Navbar';
-import TodoList from './components/TodoList/TodoList';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
