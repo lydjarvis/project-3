@@ -9,17 +9,19 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return ( 
-    <>
-      <h1>TODO LIST PROJECT</h1>
-      <Navbar />
-      <TodoList />
+    <div>
+
       <BrowserRouter>
+      <Navbar />
+      
       <Routes>
-          <Route path="/Home" element={<HomePage />} />
-          <Route path="/ContactUs" element={<ContactUs />} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/contactus" element={<ContactUs />} />
       </Routes>
-    </BrowserRouter>
-    </>
+      </BrowserRouter>
+
+      
+    </div>
   )
 }
 

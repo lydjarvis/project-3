@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 
+
+
 export default function HomePage() {
   let defaultTodos = 
   [
@@ -39,7 +41,7 @@ let handleDelete = (event, rowindex) => {
 }
   return (
     <>
-        <h1>Home Page</h1>
+        <h1></h1>
         <Button variant="dark" onClick={()=>handleAllTodos()}>All Todos</Button>
         <Button variant="dark" onClick={()=>handleCompletedTodos()}>Completed</Button>
         <Button variant="dark" onClick={()=>handleUncompletedTodos()}>Uncompleted</Button>
@@ -47,10 +49,10 @@ let handleDelete = (event, rowindex) => {
       <thead>
         <tr>
           <th>#</th>
-          <th>Todo Text</th>
+          <th>Task</th>
           <th>Todo Date</th>
-          <th>IsCompleted</th>
-          <th>DELETE</th>
+          <th>Status</th>
+          <th>Action</th>
         </tr>
       </thead>
       <tbody>
